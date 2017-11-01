@@ -1,10 +1,13 @@
 # Android 客户端数据库管理后台， DMP
 
-## DMP 是一个 强大的辅助安卓查看数据库 和 shared preferences的工具。使用Web界面管理。
+## DMP 是一个 强大的辅助安卓查看数据库 和 shared preferences的工具。使用Web界面管理客户端数据，方便查看和测试。
+
 
 ### DMP 允许你 直接通过 浏览器查看，编辑，删除 数据库和 shared preferences
-
-
+  * 原来查看数据库，必须安卓手机USB连接电脑，然后到 应用的data/data/db目录下吧数据库手动导出来，很消耗时间。
+  * 导出来 a.db文件后，还需要电脑上安装 NaviCat 之类的数据库管理工具，才能打开；
+  * 更重要的是，因为是导出数据库的方式，因此应用数据无法新增和修改；
+  * 还有SharedPreference 的 也查看和修改不了。
 
 ### 使用
 Add this to your app's build.gradle
