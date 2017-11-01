@@ -34,10 +34,11 @@ debug {
 ### 截图
 
 ### 查看数据
+<img src=/image/query2.png >
 <img src=/image/query.png >
 
 ### 编辑数据。
-<img src=/image/add.png >
+<img src=/image/edit.png >
 
 ### 模拟器配置
 - Android 原生模拟器 Emulator: Run the command in the terminal - `adb forward tcp:8080 tcp:8080` and open http://localhost:8080
