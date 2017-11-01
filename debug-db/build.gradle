@@ -52,3 +52,5 @@ dependencies {
 }
 
 //apply from: 'debug-db-upload.gradle'
+
+apply from: "mvn.gradle"
