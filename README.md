@@ -6,89 +6,46 @@
 
 
 
-### Using Android Debug Database Library in your application
+### 使用
 Add this to your app's build.gradle
 ```groovy
 debugCompile 'com.amitshekhar.android:debug-db:1.0.1'
 ```
 
-Use `debugCompile` so that it will only compile in your debug build and not in your release build.
+使用 `debugCompile` 这样只有编译的时候代码才会发布，release包就不包含这些代码，可也减少包的方法数。
 
-That’s all, just start the application, you will see in the logcat an entry like follows :
+最后启动应用，会在LogCat打印出 访问地址：
 
 * D/DebugDB: Open http://XXX.XXX.X.XXX:8080 in your browser
 
-* You can also always get the debug address url from your code by calling the method `DebugDB.getAddressLog();`
 
-Now open the provided link in your browser.
+重要:
+- 安卓手机和电脑需要连接统一网络(Wifi or LAN).
+- 如果是你是通过 usb连接，额可以执行：run `adb forward tcp:8080 tcp:8080`
 
-Important:
-- Your Android phone and laptop should be connected to the same Network (Wifi or LAN).
-- If you are using it over usb, run `adb forward tcp:8080 tcp:8080`
+#### 额外配置
 
-Note      : If you want use different port other than 8080. 
-            In the app build.gradle file under buildTypes do the following change
-
+支持修改端口号：    在应用的 build.gradle 文件buildTypes区域内新增：
 ```groovy
 debug {
     resValue("string", "PORT_NUMBER", "8081")
 }
 ```
+### 截图
 
+### 查看数据
+<img src=/image/query.png >
 
+### 编辑数据。
+<img src=/image/add.png >
 
+### 模拟器配置
+- Android 原生模拟器 Emulator: Run the command in the terminal - `adb forward tcp:8080 tcp:8080` and open http://localhost:8080
+- Genymotion Emulator: 需要开启 `Enable bridge from configure virtual device` (option available in genymotion)
 
-You will see something like this :
-
-### Seeing values
-<img src=https://raw.githubusercontent.com/amitshekhariitbhu/Android-Debug-Database/master/assets/debugdb.png >
-
-### Editing values
-<img src=https://raw.githubusercontent.com/amitshekhariitbhu/Android-Debug-Database/master/assets/debugdb_edit.png >
-
-### Working with emulator
-- Android Default Emulator: Run the command in the terminal - `adb forward tcp:8080 tcp:8080` and open http://localhost:8080
-- Genymotion Emulator: Enable bridge from configure virtual device (option available in genymotion)
-
-### Getting address with toast, in case you missed the address log in logcat
-As this library is auto-initialize, if you want to get the address log, add the following method and call (we have to do like this to avoid build error in release build as this library will not be included in the release build) using reflection.
-```java
-public static void showDebugDBAddressLogToast(Context context) {
-    if (BuildConfig.DEBUG) {
-       try {
-            Class<?> debugDB = Class.forName("com.amitshekhar.DebugDB");
-            Method getAddressLog = debugDB.getMethod("getAddressLog");
-            Object value = getAddressLog.invoke(null);
-            Toast.makeText(context, (String) value, Toast.LENGTH_LONG).show();
-       } catch (Exception ignore) {
-
-       }
-    }
-}
-```
-
-### Adding custom database files
-As this library is auto-initialize, if you want to add custom database files, add the following method and call
-```java
-public static void setCustomDatabaseFiles(Context context) {
-    if (BuildConfig.DEBUG) {
-        try {
-            Class<?> debugDB = Class.forName("com.amitshekhar.DebugDB");
-            Class[] argTypes = new Class[]{HashMap.class};
-            Method setCustomDatabaseFiles = debugDB.getMethod("setCustomDatabaseFiles", argTypes);
-            HashMap<String, File> customDatabaseFiles = new HashMap<>();
-            // set your custom database files
-            customDatabaseFiles.put(ExtTestDBHelper.DATABASE_NAME,
-                    new File(context.getFilesDir() + "/" + ExtTestDBHelper.DIR_NAME +
-                            "/" + ExtTestDBHelper.DATABASE_NAME));
-            setCustomDatabaseFiles.invoke(null, customDatabaseFiles);
-        } catch (Exception ignore) {
-
-        }
-    }
-}
-```
 
 #### 引用 
+* [安卓架构组件(6)-Room持久化类库](http://www.jianshu.com/p/587f48dccf0a)
+* [借助Stetho在Chrome上调试Android网络&数据库](http://www.jianshu.com/p/03da9f91f41f)
 * https://github.com/amitshekhariitbhu/Android-Debug-Database
 * Android Web Server
