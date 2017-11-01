@@ -12,7 +12,7 @@
 ### 使用
 Add this to your app's build.gradle
 ```groovy
-debugCompile 'com.amitshekhar.android:debug-db:1.0.1'
+debugCompile 'com.meiyou.framework:dmp:0.0.1-SNAPSHOT'
 ```
 
 使用 `debugCompile` 这样只有编译的时候代码才会发布，release包就不包含这些代码，可也减少包的方法数。
@@ -47,6 +47,13 @@ debug {
 - Android 原生模拟器 Emulator: Run the command in the terminal - `adb forward tcp:8080 tcp:8080` and open http://localhost:8080
 - Genymotion Emulator: 需要开启 `Enable bridge from configure virtual device` (option available in genymotion)
 
+### Change Log
+
+### TODO
+* 文件管理后台
+* ADB管理后台： 比如清除缓存，adb 执行等；
+* 应用管理后台： 使用网页后台测试打开URI，测试进入LoginActivity等；
+* LogCat 后台查看等；ç
 
 #### 引用 
 * [安卓架构组件(6)-Room持久化类库](http://www.jianshu.com/p/587f48dccf0a)
