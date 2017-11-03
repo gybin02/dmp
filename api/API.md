@@ -1,5 +1,5 @@
 #### 查询全部数据库；
-[getDbList.md](/master/api/getDbList.md)
+[getDbList.md](/api/getDbList.md)
 #### 获取数据库下的所有表
 [getTableList.md]()
 #### 查询全部数据
