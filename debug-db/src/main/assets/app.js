@@ -38,9 +38,19 @@ function getData(tableName) {
 }
 
 function queryFunction() {
-
+   
    var query = $('#query').val();
-
+   //输入验证
+   var support=["select","insert","update","delete"];
+   var  count=0;
+   for(var index in support){
+       count+=query.indexOf(support[index]);
+   }
+   if(count== - support.length){
+     showErrorInfo("查询失败：sql 语句 异常！");
+     return;
+   }
+   //查询
    $.ajax({url: "query?query="+escape(query), success: function(result){
 
            result = JSON.parse(result);
