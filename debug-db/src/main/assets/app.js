@@ -39,7 +39,7 @@ function getData(tableName) {
 
 function queryFunction() {
    
-   var query = $('#query').val();
+   var query = $('#query').val().toLowerCase();
    //输入验证
    var support=["select","insert","update","delete"];
    var  count=0;
