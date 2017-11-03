@@ -26,7 +26,9 @@ import android.os.Bundle;
 import android.preference.PreferenceManager;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
+import android.widget.TextView;
 
+import com.amitshekhar.DebugDB;
 import com.sample.database.CarDBHelper;
 import com.sample.database.ContactDBHelper;
 import com.sample.database.ExtTestDBHelper;
@@ -97,6 +99,10 @@ public class MainActivity extends AppCompatActivity {
         }
 
         Utils.setCustomDatabaseFiles(getApplicationContext());
+
+        TextView view = (TextView) findViewById(R.id.tv_address);
+        String addressLog = DebugDB.getAddressLog();
+        view.setText(addressLog);
     }
 
     public void showDebugDbAddress(View view) {
