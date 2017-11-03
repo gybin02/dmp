@@ -1,4 +1,4 @@
-# Android 客户端数据库管理后台， DMP
+# Android 客户端数据库管理后台（DMP= Data manager platform）
 <img src="http://ckhub.b0.upaiyun.com/dmp/head.jpg" width="100%">ç
 ## DMP 是一个 强大的辅助安卓查看数据库 和 shared preferences的工具。使用Web界面管理客户端数据，方便查看和测试。
 
