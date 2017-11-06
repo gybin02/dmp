@@ -84,7 +84,7 @@ function getDBList() {
            var isSelectionDone = false;
            for(var count = 0; count < dbList.length; count++){
              if(dbList[count].indexOf("journal") == -1){
-                $("#db-list").append("<a href='#' id=" +dbList[count] + " class='list-group-item' onClick='openDatabaseAndGetTableList(\""+ dbList[count] + "\");'>" +dbList[count] + "</a>");
+                $("#db-list").append("<a id=" +dbList[count] + " class='list-group-item' onClick='openDatabaseAndGetTableList(\""+ dbList[count] + "\");'>" +dbList[count] + "</a>");
                 if(!isSelectionDone){
                     isSelectionDone = true;
                       $('#db-list').find('a').trigger('click');
@@ -126,7 +126,7 @@ function openDatabaseAndGetTableList(db) {
            $('#table-list').empty()
            for(var count = 0; count < tableList.length; count++){
              var tableName = tableList[count];
-             $("#table-list").append("<a href='#' data-db-name='"+db+"' data-table-name='"+tableName+"' class='list-group-item' onClick='getData(\""+ tableName + "\");'>" +tableName + "</a>");
+             $("#table-list").append("<a data-db-name='"+db+"' data-table-name='"+tableName+"' class='list-group-item' onClick='getData(\""+ tableName + "\");'>" +tableName + "</a>");
            }
 
    }});
@@ -257,9 +257,9 @@ function inflateData(result){
        $(".table ").css({"width":"100%"});
    }else{
       if(!result.isSelectQuery){
-         showErrorInfo("Query Execution Failed");
+         showErrorInfo("查询失败！");
       }else {
-         showErrorInfo("Some Error Occurred");
+         showErrorInfo("请求异常，请检查参数");
       }
    }
 
