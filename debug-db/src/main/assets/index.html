@@ -135,18 +135,26 @@
 
     <div class="row padding-twenty">
         <div class="col-sm-12">
-            <form role="form">
-                <div class="form-group">
-                    <!--<label for="query">查询数据：</label>-->
-                    <input class="form-control " id="query"
-                           placeholder="支持SQL语句：比如： select * from tableA where id=1">
-                </div>
-                <button id="run-query" type="submit" onclick="queryFunction()"
+            <!--<form role="form">-->
+            <div class="form-group">
+                <!--<label for="query">查询数据：</label>-->
+                <input class="form-control " id="query"
+                       placeholder="支持SQL语句：比如： select * from tableA where id=1">
+            </div>
+
+            <!--<div class="row">-->
+                <button id="run-query" onclick="queryFunction()"
                         class="btn btn-lg btn-primary center-block disabled">
                     <!--<span class="glyphicon glyphicon-search"></span>-->
                     查询
                 </button>
-            </form>
+                <!--<button id="run-clear" onclick="queryClear()"-->
+                        <!--class="btn btn-lg btn-primary center-block">-->
+                    <!--重置-->
+                <!--</button>-->
+            <!--</div>-->
+
+            <!--</form>-->
         </div>
     </div>
 

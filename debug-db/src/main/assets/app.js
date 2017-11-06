@@ -58,8 +58,8 @@ function queryFunction() {
                 return;
            }
            result = JSON.parse(result);
-           console.log(result);
-//           inflateData(result);
+//           console.log(result);
+           inflateData(result);
 
    }});
 
