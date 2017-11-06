@@ -17,24 +17,33 @@
  *
  */
 
-package com.amitshekhar.utils;
+package com.meiyou.framework.utils;
+
+import android.content.Context;
+
+import java.io.File;
+import java.util.HashMap;
 
 /**
- * Created by amitshekhar on 04/02/17.
+ * Created by amitshekhar on 06/02/17.
  */
 
-public class DataType {
+public class DatabaseFileProvider {
 
-    private DataType() {
+    private DatabaseFileProvider() {
         // This class in not publicly instantiable
     }
 
-    public static final String BOOLEAN = "boolean";
-    public static final String INTEGER = "integer";
-    public static final String REAL = "real";
-    public static final String TEXT = "text";
-    public static final String LONG = "long";
-    public static final String FLOAT = "float";
-    public static final String STRING_SET = "string_set";
+    public static HashMap<String, File> getDatabaseFiles(Context context) {
+        HashMap<String, File> databaseFiles = new HashMap<>();
+        try {
+            for (String databaseName : context.databaseList()) {
+                databaseFiles.put(databaseName, context.getDatabasePath(databaseName));
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return databaseFiles;
+    }
 
 }

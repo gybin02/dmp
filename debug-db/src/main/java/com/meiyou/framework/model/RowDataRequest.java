@@ -17,30 +17,17 @@
  *
  */
 
-package com.amitshekhar.model;
-
-import java.util.List;
+package com.meiyou.framework.model;
 
 /**
  * Created by amitshekhar on 04/02/17.
  */
 
-public class TableDataResponse {
+public class RowDataRequest {
 
-    public List<TableInfo> tableInfos;
-    public boolean isSuccessful;
-    public List<Object> rows;
-    public String errorMessage;
-    public boolean isEditable;
-    public boolean isSelectQuery;
-
-    public static class TableInfo {
-        public String title;
-        public boolean isPrimary;
-    }
-    public static class ColumnData {
-        public String dataType;
-        public Object value;
-    }
+    public String title;
+    public boolean isPrimary;
+    public String dataType;
+    public String value;
 
 }

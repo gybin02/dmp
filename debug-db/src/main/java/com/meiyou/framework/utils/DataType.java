@@ -17,25 +17,24 @@
  *
  */
 
-package com.amitshekhar.model;
-
-import java.util.ArrayList;
-import java.util.List;
+package com.meiyou.framework.utils;
 
 /**
- * Created by amitshekhar on 15/11/16.
+ * Created by amitshekhar on 04/02/17.
  */
 
-public class Response {
+public class DataType {
 
-    public List<Object> rows = new ArrayList<>();
-    public List<String> columns = new ArrayList<>();
-    public boolean isSuccessful;
-    public String error;
-    public int dbVersion;
-
-    public Response() {
-
+    private DataType() {
+        // This class in not publicly instantiable
     }
+
+    public static final String BOOLEAN = "boolean";
+    public static final String INTEGER = "integer";
+    public static final String REAL = "real";
+    public static final String TEXT = "text";
+    public static final String LONG = "long";
+    public static final String FLOAT = "float";
+    public static final String STRING_SET = "string_set";
 
 }

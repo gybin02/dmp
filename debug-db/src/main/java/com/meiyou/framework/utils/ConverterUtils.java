@@ -17,7 +17,7 @@
  *
  */
 
-package com.amitshekhar.utils;
+package com.meiyou.framework.utils;
 
 import java.io.UnsupportedEncodingException;
 

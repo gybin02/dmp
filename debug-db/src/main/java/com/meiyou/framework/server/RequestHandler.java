@@ -17,7 +17,7 @@
  *
  */
 
-package com.amitshekhar.server;
+package com.meiyou.framework.server;
 
 import android.content.Context;
 import android.content.res.AssetManager;
@@ -25,15 +25,15 @@ import android.database.sqlite.SQLiteDatabase;
 import android.net.Uri;
 import android.text.TextUtils;
 
-import com.amitshekhar.model.Response;
-import com.amitshekhar.model.RowDataRequest;
-import com.amitshekhar.model.TableDataResponse;
-import com.amitshekhar.model.UpdateRowResponse;
-import com.amitshekhar.utils.Constants;
-import com.amitshekhar.utils.DatabaseFileProvider;
-import com.amitshekhar.utils.DatabaseHelper;
-import com.amitshekhar.utils.PrefHelper;
-import com.amitshekhar.utils.Utils;
+import com.meiyou.framework.model.Response;
+import com.meiyou.framework.model.RowDataRequest;
+import com.meiyou.framework.model.TableDataResponse;
+import com.meiyou.framework.model.UpdateRowResponse;
+import com.meiyou.framework.utils.Constants;
+import com.meiyou.framework.utils.DatabaseFileProvider;
+import com.meiyou.framework.utils.DatabaseHelper;
+import com.meiyou.framework.utils.PrefHelper;
+import com.meiyou.framework.utils.Utils;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import com.google.gson.reflect.TypeToken;

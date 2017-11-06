@@ -17,7 +17,7 @@
  *
  */
 
-package com.amitshekhar;
+package com.framework;
 
 import org.junit.Test;
 

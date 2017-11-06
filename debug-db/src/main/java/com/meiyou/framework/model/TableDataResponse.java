@@ -17,34 +17,30 @@
  *
  */
 
-package com.amitshekhar.utils;
+package com.meiyou.framework.model;
 
-import android.content.Context;
-
-import java.io.File;
-import java.util.HashMap;
 import java.util.List;
 
 /**
- * Created by amitshekhar on 06/02/17.
+ * Created by amitshekhar on 04/02/17.
  */
 
-public class DatabaseFileProvider {
+public class TableDataResponse {
 
-    private DatabaseFileProvider() {
-        // This class in not publicly instantiable
+    public List<TableInfo> tableInfos;
+    public boolean isSuccessful;
+    public List<Object> rows;
+    public String errorMessage;
+    public boolean isEditable;
+    public boolean isSelectQuery;
+
+    public static class TableInfo {
+        public String title;
+        public boolean isPrimary;
     }
-
-    public static HashMap<String, File> getDatabaseFiles(Context context) {
-        HashMap<String, File> databaseFiles = new HashMap<>();
-        try {
-            for (String databaseName : context.databaseList()) {
-                databaseFiles.put(databaseName, context.getDatabasePath(databaseName));
-            }
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-        return databaseFiles;
+    public static class ColumnData {
+        public String dataType;
+        public Object value;
     }
 
 }

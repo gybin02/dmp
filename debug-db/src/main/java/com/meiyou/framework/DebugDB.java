@@ -17,17 +17,17 @@
  *
  */
 
-package com.amitshekhar;
+package com.meiyou.framework;
 
 import android.content.Context;
 import android.util.Log;
 
-import com.amitshekhar.server.ClientServer;
-import com.amitshekhar.utils.NetworkUtils;
+import com.framework.R;
+import com.meiyou.framework.server.ClientServer;
+import com.meiyou.framework.utils.NetworkUtils;
 
 import java.io.File;
 import java.util.HashMap;
-import java.util.Map;
 
 /**
  * Created by amitshekhar on 15/11/16.

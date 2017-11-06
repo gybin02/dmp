@@ -17,7 +17,7 @@
  *
  */
 
-package com.amitshekhar;
+package com.meiyou.framework;
 
 import android.content.ContentProvider;
 import android.content.ContentValues;

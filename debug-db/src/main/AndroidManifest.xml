@@ -18,7 +18,7 @@
   -->
 
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.amitshekhar">
+    package="com.framework">
 
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
@@ -28,7 +28,7 @@
             android:authorities="${applicationId}.DebugDBInitProvider"
             android:exported="false"
             android:enabled="true"
-            android:name=".DebugDBInitProvider" />
+            android:name="com.meiyou.framework.DebugDBInitProvider" />
     </application>
 
 </manifest>

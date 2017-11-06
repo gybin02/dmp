@@ -17,18 +17,17 @@
  *
  */
 
-package com.amitshekhar.utils;
+package com.meiyou.framework.utils;
 
 import android.content.ContentValues;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.text.TextUtils;
-import android.util.Log;
 
-import com.amitshekhar.model.Response;
-import com.amitshekhar.model.RowDataRequest;
-import com.amitshekhar.model.TableDataResponse;
-import com.amitshekhar.model.UpdateRowResponse;
+import com.meiyou.framework.model.Response;
+import com.meiyou.framework.model.RowDataRequest;
+import com.meiyou.framework.model.TableDataResponse;
+import com.meiyou.framework.model.UpdateRowResponse;
 
 import java.util.ArrayList;
 import java.util.HashSet;

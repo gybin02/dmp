@@ -17,7 +17,7 @@
  *
  */
 
-package com.amitshekhar.model;
+package com.meiyou.framework.model;
 
 /**
  * Created by amitshekhar on 04/02/17.

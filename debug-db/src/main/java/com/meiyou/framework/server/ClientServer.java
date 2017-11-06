@@ -17,7 +17,7 @@
  *
  */
 
-package com.amitshekhar.server;
+package com.meiyou.framework.server;
 
 /**
  * Created by amitshekhar on 15/11/16.

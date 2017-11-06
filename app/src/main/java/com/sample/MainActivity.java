@@ -28,7 +28,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.TextView;
 
-import com.amitshekhar.DebugDB;
+import com.meiyou.framework.DebugDB;
 import com.sample.database.CarDBHelper;
 import com.sample.database.ContactDBHelper;
 import com.sample.database.ExtTestDBHelper;

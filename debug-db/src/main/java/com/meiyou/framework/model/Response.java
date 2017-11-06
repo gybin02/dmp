@@ -17,17 +17,25 @@
  *
  */
 
-package com.amitshekhar.model;
+package com.meiyou.framework.model;
+
+import java.util.ArrayList;
+import java.util.List;
 
 /**
- * Created by amitshekhar on 04/02/17.
+ * Created by amitshekhar on 15/11/16.
  */
 
-public class RowDataRequest {
+public class Response {
 
-    public String title;
-    public boolean isPrimary;
-    public String dataType;
-    public String value;
+    public List<Object> rows = new ArrayList<>();
+    public List<String> columns = new ArrayList<>();
+    public boolean isSuccessful;
+    public String error;
+    public int dbVersion;
+
+    public Response() {
+
+    }
 
 }
