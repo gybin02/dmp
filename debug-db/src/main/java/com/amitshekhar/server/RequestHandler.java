@@ -93,6 +93,10 @@ public class RequestHandler {
             if (route == null || route.isEmpty()) {
                 route = "index.html";
             }
+            if ("?".equals(route)) {
+                writeServerError(output);
+                return;
+            }
 
             byte[] bytes;
 
@@ -116,6 +120,7 @@ public class RequestHandler {
                 bytes = response.getBytes();
             } else if (route.startsWith("query")) {
                 final String response = executeQueryAndGetResponse(route);
+//                String response= "{\"errorMessage\":null,\"isEditable\":true,\"isSelectQuery\":true,\"isSuccessful\":true,\"rows\":[[{\"dataType\":\"integer\",\"value\":2},{\"dataType\":\"text\",\"value\":\"name_1\"},{\"dataType\":\"text\",\"value\":\"RED\"},{\"dataType\":\"real\",\"value\":11.449999809265137}]],\"tableInfos\":[{\"isPrimary\":true,\"title\":\"id\"},{\"isPrimary\":false,\"title\":\"name\"},{\"isPrimary\":false,\"title\":\"color\"},{\"isPrimary\":false,\"title\":\"mileage\"}]}";
                 bytes = response.getBytes();
             } else if (route.startsWith("downloadDb")) {
                 bytes = Utils.getDatabase(mSelectedDatabase, mDatabaseFiles);
@@ -154,7 +159,7 @@ public class RequestHandler {
         }
     }
 
-    public void setCustomDatabaseFiles(HashMap<String, File> customDatabaseFiles){
+    public void setCustomDatabaseFiles(HashMap<String, File> customDatabaseFiles) {
         mCustomDatabaseFiles = customDatabaseFiles;
     }
 
@@ -180,7 +185,7 @@ public class RequestHandler {
 
     private String getDBListResponse() {
         mDatabaseFiles = DatabaseFileProvider.getDatabaseFiles(mContext);
-        if(mCustomDatabaseFiles!=null){
+        if (mCustomDatabaseFiles != null) {
             mDatabaseFiles.putAll(mCustomDatabaseFiles);
         }
         Response response = new Response();
