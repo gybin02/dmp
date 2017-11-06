@@ -33,7 +33,6 @@ import java.net.ServerSocket;
 import java.net.Socket;
 import java.net.SocketException;
 import java.util.HashMap;
-import java.util.Map;
 
 public class ClientServer implements Runnable {
 
@@ -80,10 +79,11 @@ public class ClientServer implements Runnable {
             }
         } catch (SocketException e) {
             // The server was stopped; ignore.
+            Log.e(TAG, "SocketException server error.", e);
         } catch (IOException e) {
             Log.e(TAG, "Web server error.", e);
-        } catch (Exception ignore) {
-
+        } catch (Exception e) {
+            Log.e(TAG, "OtherException server error.", e);
         }
     }
 

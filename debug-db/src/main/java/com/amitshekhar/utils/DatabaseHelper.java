@@ -170,7 +170,8 @@ public class DatabaseHelper {
 
 
     private static String getQuotedTableName(String tableName) {
-        return String.format("[%s]", tableName);
+        return tableName;
+//        return String.format("[%s]", tableName);
     }
 
     private static List<TableDataResponse.TableInfo> getTableInfo(SQLiteDatabase db, String pragmaQuery) {

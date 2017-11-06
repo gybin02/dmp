@@ -44,7 +44,7 @@ debug {
 <img src=/image/edit.png >
 
 ### 模拟器配置
-- Android 原生模拟器 Emulator: Run the command in the terminal - `adb forward tcp:8080 tcp:8080` and open http://localhost:8080
+- Android 原生模拟器 Emulator: Run the command in the terminal - `adb forward tcp:8080 tcp:8081` and open http://localhost:8080
 - Genymotion Emulator: 需要开启 `Enable bridge from configure virtual device` (option available in genymotion)
 
 ### Change Log
@@ -53,7 +53,7 @@ debug {
 * 文件管理后台
 * ADB管理后台： 比如清除缓存，adb 执行等；
 * 应用管理后台： 使用网页后台测试打开URI，测试进入LoginActivity等；
-* LogCat 后台查看等；ç
+* LogCat 后台查看等；
 
 #### 引用 
 * [安卓架构组件(6)-Room持久化类库](http://www.jianshu.com/p/587f48dccf0a)
