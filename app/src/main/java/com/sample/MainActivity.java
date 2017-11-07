@@ -47,12 +47,18 @@ public class MainActivity extends AppCompatActivity {
 
         setContentView(R.layout.activity_main);
 
+        ///初始化数据库工具
+        Context context = getApplicationContext();
+        
+        DebugDB.initialize(context);
+
+        //模拟数据
         Set<String> stringSet = new HashSet<>();
         stringSet.add("SetOne");
         stringSet.add("SetTwo");
         stringSet.add("SetThree");
 
-        SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
+        SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(context);
 
         SharedPreferences prefsOne = getSharedPreferences("countPrefOne", Context.MODE_PRIVATE);
         SharedPreferences prefsTwo = getSharedPreferences("countPrefTwo", Context.MODE_PRIVATE);
@@ -67,8 +73,9 @@ public class MainActivity extends AppCompatActivity {
         prefsOne.edit().putString("testOneNew", "one").commit();
 
         prefsTwo.edit().putString("testTwoNew", "two").commit();
-
-        ContactDBHelper contactDBHelper = new ContactDBHelper(getApplicationContext());
+        
+        //模拟插入数据库
+        ContactDBHelper contactDBHelper = new ContactDBHelper(context);
         if (contactDBHelper.count() == 0) {
             for (int i = 0; i < 100; i++) {
                 String name = "name_" + i;
@@ -80,7 +87,7 @@ public class MainActivity extends AppCompatActivity {
             }
         }
 
-        CarDBHelper carDBHelper = new CarDBHelper(getApplicationContext());
+        CarDBHelper carDBHelper = new CarDBHelper(context);
         if (carDBHelper.count() == 0) {
             for (int i = 0; i < 50; i++) {
                 String name = "name_" + i;
@@ -90,7 +97,7 @@ public class MainActivity extends AppCompatActivity {
             }
         }
 
-        ExtTestDBHelper extTestDBHelper = new ExtTestDBHelper(getApplicationContext());
+        ExtTestDBHelper extTestDBHelper = new ExtTestDBHelper(context);
         if (extTestDBHelper.count() == 0) {
             for (int i = 0; i < 20; i++) {
                 String value = "value_" + i;
@@ -98,11 +105,12 @@ public class MainActivity extends AppCompatActivity {
             }
         }
 
-        Utils.setCustomDatabaseFiles(getApplicationContext());
+        Utils.setCustomDatabaseFiles(context);
 
         TextView view = (TextView) findViewById(R.id.tv_address);
         String addressLog = DebugDB.getAddressLog();
         view.setText(addressLog);
+        
     }
 
     public void showDebugDbAddress(View view) {
