@@ -29,7 +29,7 @@ import android.net.Uri;
 /**
  * Created by amitshekhar on 16/11/16.
  */
-
+@Deprecated
 public class DebugDBInitProvider extends ContentProvider {
 
 
@@ -38,7 +38,7 @@ public class DebugDBInitProvider extends ContentProvider {
 
     @Override
     public boolean onCreate() {
-        DebugDB.initialize(getContext());
+//        DebugDB.initialize(getContext());
         return true;
     }
 

@@ -1,22 +1,3 @@
-/*
- *
- *  *    Copyright (C) 2016 Amit Shekhar
- *  *    Copyright (C) 2011 Android Open Source Project
- *  *
- *  *    Licensed under the Apache License, Version 2.0 (the "License");
- *  *    you may not use this file except in compliance with the License.
- *  *    You may obtain a copy of the License at
- *  *
- *  *        http://www.apache.org/licenses/LICENSE-2.0
- *  *
- *  *    Unless required by applicable law or agreed to in writing, software
- *  *    distributed under the License is distributed on an "AS IS" BASIS,
- *  *    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- *  *    See the License for the specific language governing permissions and
- *  *    limitations under the License.
- *
- */
-
 package com.meiyou.framework;
 
 import android.content.Context;
@@ -30,9 +11,11 @@ import java.io.File;
 import java.util.HashMap;
 
 /**
- * Created by amitshekhar on 15/11/16.
+ * 数据库查看，需要先初始化：initialize(Context)
+ *
+ * @author zhengxiaobin@xiaoyouzi.com
+ * @since 17/11/7 上午10:58
  */
-
 public class DebugDB {
 
     private static final String TAG = DebugDB.class.getSimpleName();
@@ -44,6 +27,11 @@ public class DebugDB {
         // This class in not publicly instantiable
     }
 
+    /**
+     * 初始化
+     *
+     * @param context
+     */
     public static void initialize(Context context) {
         int portNumber;
 
@@ -61,11 +49,19 @@ public class DebugDB {
         Log.d(TAG, addressLog);
     }
 
+    /**
+     * 获取 Web 服务器地址
+     *
+     * @return
+     */
     public static String getAddressLog() {
         Log.d(TAG, addressLog);
         return addressLog;
     }
 
+    /**
+     * 关闭Socket服务器
+     */
     public static void shutDown() {
         if (clientServer != null) {
             clientServer.stop();
@@ -73,12 +69,22 @@ public class DebugDB {
         }
     }
 
-    public static void setCustomDatabaseFiles(HashMap<String, File> customDatabaseFiles){
-        if(clientServer!=null){
+    /**
+     * 手动设置外部数据库
+     *
+     * @param customDatabaseFiles
+     */
+    public static void setCustomDatabaseFiles(HashMap<String, File> customDatabaseFiles) {
+        if (clientServer != null) {
             clientServer.setCustomDatabaseFiles(customDatabaseFiles);
         }
     }
-    
+
+    /**
+     * 服务器是否运行
+     *
+     * @return
+     */
     public static boolean isServerRunning() {
         return clientServer != null && clientServer.isRunning();
     }
