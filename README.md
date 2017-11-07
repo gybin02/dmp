@@ -20,7 +20,10 @@ debugCompile 'com.meiyou.framework:dmp:0.0.1-SNAPSHOT'
 最后启动应用，会在LogCat打印出 访问地址：
 
 * D/DebugDB: Open http://XXX.XXX.X.XXX:8080 in your browser
-
+```java
+    //初始化
+    DebugDB.initialize(getContext());
+```
 
 重要:
 - 安卓手机和电脑需要连接统一网络(Wifi or LAN).
