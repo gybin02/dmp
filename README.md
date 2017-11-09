@@ -49,7 +49,10 @@ debug {
 ### 模拟器配置
 - Android 原生模拟器 Emulator: Run the command in the terminal - `adb forward tcp:8080 tcp:8081` and open http://localhost:8080
 - Genymotion Emulator: 需要开启 `Enable bridge from configure virtual device` (option available in genymotion)
-
+```
+# 把PC端8000端口的数据, 转发到Android端的9000端口上.
+adb forward tcp:8000 tcp:9000
+```
 ### Change Log
 
 ### TODO
