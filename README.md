@@ -46,7 +46,7 @@ debug {
 
 ### 查看数据
 <img src=/image/query.png >
-<img src=/image/rocket.png >
+<img src=/image/rocket.jpg >
 
 ### 编辑数据。
 <img src=/image/edit.png >
