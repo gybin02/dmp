@@ -1,23 +1,5 @@
-/*
- *
- *  *    Copyright (C) 2016 Amit Shekhar
- *  *    Copyright (C) 2011 Android Open Source Project
- *  *
- *  *    Licensed under the Apache License, Version 2.0 (the "License");
- *  *    you may not use this file except in compliance with the License.
- *  *    You may obtain a copy of the License at
- *  *
- *  *        http://www.apache.org/licenses/LICENSE-2.0
- *  *
- *  *    Unless required by applicable law or agreed to in writing, software
- *  *    distributed under the License is distributed on an "AS IS" BASIS,
- *  *    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- *  *    See the License for the specific language governing permissions and
- *  *    limitations under the License.
- *
- */
 
-package com.meiyou.framework;
+package com.meiyou.framework.dmp;
 
 import android.content.Context;
 import android.util.Log;
@@ -26,17 +8,18 @@ import java.io.File;
 import java.util.HashMap;
 
 /**
- * Created by amitshekhar on 15/11/16.
+ * 
+ * @author zhengxiaobin@xiaoyouzi.com
+ * @since  17/11/10 上午9:20
  */
+public class DmpHelper {
 
-public class DebugDB {
-
-    private static final String TAG = DebugDB.class.getSimpleName();
+    private static final String TAG = DmpHelper.class.getSimpleName();
     private static final int DEFAULT_PORT = 8080;
     //    private static ClientServer clientServer;
     private static String addressLog = "not available";
 
-    private DebugDB() {
+    private DmpHelper() {
         // This class in not publicly instantiable
     }
 
