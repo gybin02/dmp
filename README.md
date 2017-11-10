@@ -37,6 +37,11 @@ debug {
     resValue("string", "PORT_NUMBER", "8081")
 }
 ```
+混淆配置：
+```groove
+  -keep class com.meiyou.framework.dmp.** {*;}
+
+```
 ### 截图
 
 ### 查看数据
@@ -60,6 +65,11 @@ adb forward tcp:8000 tcp:9000
 * ADB管理后台： 比如清除缓存，adb 执行等；
 * 应用管理后台： 使用网页后台测试打开URI，测试进入LoginActivity等；
 * LogCat 后台查看等；
+
+#### CHANGE LOG
+##### 0.0.3-SNAPSHOT
+- 包名优化
+- 支持混淆配置；
 
 #### 引用 
 * [安卓架构组件(6)-Room持久化类库](http://www.jianshu.com/p/587f48dccf0a)
