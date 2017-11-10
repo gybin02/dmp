@@ -45,8 +45,8 @@ debug {
 ### 截图
 
 ### 查看数据
-<img src=/image/query2.png >
 <img src=/image/query.png >
+<img src=/image/rocket.png >
 
 ### 编辑数据。
 <img src=/image/edit.png >
