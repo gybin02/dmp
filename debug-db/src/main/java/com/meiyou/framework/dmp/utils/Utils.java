@@ -57,6 +57,13 @@ public class Utils {
         }
     }
 
+    /**
+     * asset 里加载资源
+     * @param fileName
+     * @param assetManager
+     * @return
+     * @throws IOException
+     */
     public static byte[] loadContent(String fileName, AssetManager assetManager) throws IOException {
         InputStream input = null;
         try {
