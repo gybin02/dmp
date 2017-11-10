@@ -28,7 +28,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.TextView;
 
-import com.meiyou.framework.DebugDB;
+import com.meiyou.framework.dmp.DmpHelper;
 import com.sample.database.CarDBHelper;
 import com.sample.database.ContactDBHelper;
 import com.sample.database.ExtTestDBHelper;
@@ -50,7 +50,7 @@ public class MainActivity extends AppCompatActivity {
         ///初始化数据库工具
         Context context = getApplicationContext();
         
-        DebugDB.initialize(context);
+        DmpHelper.initialize(context);
 
         //模拟数据
         Set<String> stringSet = new HashSet<>();
@@ -108,7 +108,7 @@ public class MainActivity extends AppCompatActivity {
         Utils.setCustomDatabaseFiles(context);
 
         TextView view = (TextView) findViewById(R.id.tv_address);
-        String addressLog = DebugDB.getAddressLog();
+        String addressLog = DmpHelper.getAddressLog();
         view.setText(addressLog);
         
     }
