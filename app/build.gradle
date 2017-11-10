@@ -35,7 +35,7 @@ android {
             resValue("string", "PORT_NUMBER", "8081")
         }
         release {
-            minifyEnabled false
+            minifyEnabled true
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
