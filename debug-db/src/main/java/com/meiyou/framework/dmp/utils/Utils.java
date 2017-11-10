@@ -17,7 +17,7 @@
  *
  */
 
-package com.meiyou.framework.utils;
+package com.meiyou.framework.dmp.utils;
 
 import android.content.res.AssetManager;
 import android.text.TextUtils;

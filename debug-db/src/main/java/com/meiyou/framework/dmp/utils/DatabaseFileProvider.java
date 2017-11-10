@@ -17,32 +17,33 @@
  *
  */
 
-package com.meiyou.framework.utils;
+package com.meiyou.framework.dmp.utils;
 
-import android.annotation.SuppressLint;
 import android.content.Context;
-import android.net.wifi.WifiManager;
+
+import java.io.File;
+import java.util.HashMap;
 
 /**
- * Created by amitshekhar on 15/11/16.
+ * Created by amitshekhar on 06/02/17.
  */
 
-public final class NetworkUtils {
+public class DatabaseFileProvider {
 
-    private NetworkUtils() {
+    private DatabaseFileProvider() {
         // This class in not publicly instantiable
     }
 
-    public static String getAddressLog(Context context, int port) {
-        WifiManager wifiManager = (WifiManager) context.getSystemService(Context.WIFI_SERVICE);
-        int ipAddress = wifiManager.getConnectionInfo().getIpAddress();
-        @SuppressLint("DefaultLocale")
-        final String formattedIpAddress = String.format("%d.%d.%d.%d",
-                (ipAddress & 0xff),
-                (ipAddress >> 8 & 0xff),
-                (ipAddress >> 16 & 0xff),
-                (ipAddress >> 24 & 0xff));
-        return "Open http://" + formattedIpAddress + ":" + port + " in your browser";
+    public static HashMap<String, File> getDatabaseFiles(Context context) {
+        HashMap<String, File> databaseFiles = new HashMap<>();
+        try {
+            for (String databaseName : context.databaseList()) {
+                databaseFiles.put(databaseName, context.getDatabasePath(databaseName));
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return databaseFiles;
     }
 
 }

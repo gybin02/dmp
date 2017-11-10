@@ -17,17 +17,17 @@
  *
  */
 
-package com.meiyou.framework.utils;
+package com.meiyou.framework.dmp.utils;
 
 import android.content.ContentValues;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.text.TextUtils;
 
-import com.meiyou.framework.model.Response;
-import com.meiyou.framework.model.RowDataRequest;
-import com.meiyou.framework.model.TableDataResponse;
-import com.meiyou.framework.model.UpdateRowResponse;
+import com.meiyou.framework.dmp.model.Response;
+import com.meiyou.framework.dmp.model.RowDataRequest;
+import com.meiyou.framework.dmp.model.TableDataResponse;
+import com.meiyou.framework.dmp.model.UpdateRowResponse;
 
 import java.util.ArrayList;
 import java.util.HashSet;

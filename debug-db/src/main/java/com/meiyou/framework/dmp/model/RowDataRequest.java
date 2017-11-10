@@ -17,7 +17,7 @@
  *
  */
 
-package com.meiyou.framework.model;
+package com.meiyou.framework.dmp.model;
 
 /**
  * Created by amitshekhar on 04/02/17.

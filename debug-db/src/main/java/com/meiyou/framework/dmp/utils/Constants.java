@@ -17,30 +17,21 @@
  *
  */
 
-package com.meiyou.framework.model;
-
-import java.util.List;
+package com.meiyou.framework.dmp.utils;
 
 /**
- * Created by amitshekhar on 04/02/17.
+ * Created by amitshekhar on 16/11/16.
  */
 
-public class TableDataResponse {
+public final class Constants {
 
-    public List<TableInfo> tableInfos;
-    public boolean isSuccessful;
-    public List<Object> rows;
-    public String errorMessage;
-    public boolean isEditable;
-    public boolean isSelectQuery;
+    private Constants() {
+        // This class in not publicly instantiable
+    }
 
-    public static class TableInfo {
-        public String title;
-        public boolean isPrimary;
-    }
-    public static class ColumnData {
-        public String dataType;
-        public Object value;
-    }
+    public static final String APP_SHARED_PREFERENCES = "APP_SHARED_PREFERENCES";
+    public static final String PK = "pk";
+    public static final String NAME = "name";
+    public static final String NULL = "null";
 
 }

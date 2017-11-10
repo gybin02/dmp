@@ -17,7 +17,7 @@
  *
  */
 
-package com.meiyou.framework.server;
+package com.meiyou.framework.dmp.server;
 
 /**
  * Created by amitshekhar on 15/11/16.

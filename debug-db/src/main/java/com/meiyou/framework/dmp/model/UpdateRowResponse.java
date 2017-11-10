@@ -17,25 +17,14 @@
  *
  */
 
-package com.meiyou.framework.model;
-
-import java.util.ArrayList;
-import java.util.List;
+package com.meiyou.framework.dmp.model;
 
 /**
- * Created by amitshekhar on 15/11/16.
+ * Created by amitshekhar on 04/02/17.
  */
 
-public class Response {
+public class UpdateRowResponse {
 
-    public List<Object> rows = new ArrayList<>();
-    public List<String> columns = new ArrayList<>();
     public boolean isSuccessful;
-    public String error;
-    public int dbVersion;
-
-    public Response() {
-
-    }
 
 }

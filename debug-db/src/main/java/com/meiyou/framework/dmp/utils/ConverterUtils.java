@@ -17,7 +17,7 @@
  *
  */
 
-package com.meiyou.framework.utils;
+package com.meiyou.framework.dmp.utils;
 
 import java.io.UnsupportedEncodingException;
 

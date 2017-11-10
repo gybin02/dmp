@@ -17,24 +17,30 @@
  *
  */
 
-package com.meiyou.framework.utils;
+package com.meiyou.framework.dmp.model;
+
+import java.util.List;
 
 /**
  * Created by amitshekhar on 04/02/17.
  */
 
-public class DataType {
+public class TableDataResponse {
 
-    private DataType() {
-        // This class in not publicly instantiable
+    public List<TableInfo> tableInfos;
+    public boolean isSuccessful;
+    public List<Object> rows;
+    public String errorMessage;
+    public boolean isEditable;
+    public boolean isSelectQuery;
+
+    public static class TableInfo {
+        public String title;
+        public boolean isPrimary;
     }
-
-    public static final String BOOLEAN = "boolean";
-    public static final String INTEGER = "integer";
-    public static final String REAL = "real";
-    public static final String TEXT = "text";
-    public static final String LONG = "long";
-    public static final String FLOAT = "float";
-    public static final String STRING_SET = "string_set";
+    public static class ColumnData {
+        public String dataType;
+        public Object value;
+    }
 
 }
