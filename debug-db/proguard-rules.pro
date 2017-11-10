@@ -73,3 +73,6 @@
 # -keep public class mypackage.MyClass
 # -keep public interface mypackage.MyInterface
 # -keep public class * implements mypackage.MyInterface
+# DMP 
+-keep class com.meiyou.framework.dmp.** {*;}
+
