@@ -59,7 +59,6 @@ debug {
 # 把PC端8000端口的数据, 转发到Android端的9000端口上.
 adb forward tcp:8000 tcp:9000
 ```
-### Change Log
 
 ### TODO
 * 文件管理后台
@@ -67,13 +66,17 @@ adb forward tcp:8000 tcp:9000
 * 应用管理后台： 使用网页后台测试打开URI，测试进入LoginActivity等；
 * LogCat 后台查看等；
 
-#### CHANGE LOG
-##### 0.0.3-SNAPSHOT
+### CHANGE LOG
+#### 0.0.3-SNAPSHOT
 - 包名优化
 - 支持混淆配置；
 
-#### 引用 
+### API 文档
+ [API 接口文档](http://git.meiyou.im/Android/dmp/blob/master/api/API.md)
+ 
+### 引用 
 * [安卓架构组件(6)-Room持久化类库](http://www.jianshu.com/p/587f48dccf0a)
 * [借助Stetho在Chrome上调试Android网络&数据库](http://www.jianshu.com/p/03da9f91f41f)
 * https://github.com/amitshekhariitbhu/Android-Debug-Database
 * Android Web Server
+* Socket 服务器配置
