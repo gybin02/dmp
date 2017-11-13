@@ -23,7 +23,7 @@ debugCompile 'com.meiyou.framework:dmp:0.0.1-SNAPSHOT'
 
 ```java
     //初始化
-    DebugDB.initialize(getContext());
+    DmpHelper.initialize(getContext());
 ```
 
 重要:
